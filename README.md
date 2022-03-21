@@ -2,13 +2,26 @@
 Bilibili comment hash to user id rainbow table system
 
 
-# Generate table
-```php -f gen.php 1 300000000 > table```
+# Setup data
+```
+# php -f gen.php 300000000 600000000 > table
+php -f gen.php 1 300000000 > table
+mkdir data
+mv table data
+```
 
+# Requirements
+libev
+
+## Arch
+`pacman -S libev`
+
+## Ubuntu
+
+`apt install libev-dev`
 
 # Run server
 ```
-pacman -S libev 
 make
 ./biliquery
 ```
@@ -18,4 +31,8 @@ make
 
 # API ( no sla, 300billon )
 
-http://biliquery.typcn.com/api/user/hash/
+~~http://biliquery.typcn.com/api/user/hash/~~
+
+http://localhost:6067/[用户Hash]
+
+[用户Hash] 直接copy自弹幕的xml文件
