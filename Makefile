@@ -1,2 +1,6 @@
-build:
-	g++ -o biliquery -std=c++11 -O3 ConnHandler.cpp QTableMain.cpp Responder.cpp TCPServer.cpp -lev -lpthread
+
+hhdbms:
+	@ cargo install --path ./hash-hack-dbms
+
+hhserv:
+	@ cargo install --path ./hash-hack-httpserver

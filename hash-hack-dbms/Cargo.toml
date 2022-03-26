@@ -1,0 +1,30 @@
+cargo-features = ["different-binary-name"]
+
+[package]
+name = "hash-hack-dbms"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+regex = "1"
+clap = { version = "^3", features = ["derive"] }
+clap_complete = "3.1.1"
+shellexpand = "2.1"
+crc32fast = "1.3.2"
+indicatif = "0.16.2"
+bitvec = "1"
+serde = "*"
+serde_derive = "*"
+m6coll = "0.2.0"
+sorted-vec = "0.7.0"
+
+
+[[bin]]
+name = "hhq"
+path = "bin/main_query.rs"
+
+[[bin]]
+name = "hhgd"
+path = "bin/main_gendata.rs"

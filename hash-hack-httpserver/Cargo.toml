@@ -1,0 +1,22 @@
+cargo-features = ["different-binary-name"]
+
+[package]
+name = "hash-hack-httpserver"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+warp = "0.3.*"
+hash-hack-dbms = { path = "../hash-hack-dbms" }
+serde = "*"
+serde_derive = "*"
+tracing = "*"
+tracing-subscriber = "*"
+clap = { version = "^3", features = ["derive"] }
+
+
+[[bin]]
+name = "hhserv"
+path = "src/main.rs"
